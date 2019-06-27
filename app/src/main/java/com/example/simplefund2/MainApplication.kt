@@ -2,8 +2,8 @@ package com.example.simplefund2
 
 import android.app.Activity
 import android.app.Application
-import io.realm.Realm
-import io.realm.RealmConfiguration
+import android.content.Context
+import com.example.simplefund2.helper.DBHelper
 import org.json.JSONObject
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
@@ -41,11 +41,6 @@ class MainApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
-        // ... Initialization Realm Database
-        Realm.init(this)
-        val config = RealmConfiguration.Builder().name("simpleFund.realm").schemaVersion(1).deleteRealmIfMigrationNeeded().build()
-        Realm.setDefaultConfiguration(config)
 
     }
 }
